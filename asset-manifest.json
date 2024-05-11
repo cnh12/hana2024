@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/hana2024/static/css/main.a1253eb0.css",
-    "main.js": "/hana2024/static/js/main.7769a562.js",
-    "static/js/453.2e856aa4.chunk.js": "/hana2024/static/js/453.2e856aa4.chunk.js",
-    "static/media/star.png": "/hana2024/static/media/star.dfcb65b96d341caf030b.png",
-    "static/media/logo.svg": "/hana2024/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/hana2024/index.html",
-    "main.a1253eb0.css.map": "/hana2024/static/css/main.a1253eb0.css.map",
-    "main.7769a562.js.map": "/hana2024/static/js/main.7769a562.js.map",
-    "453.2e856aa4.chunk.js.map": "/hana2024/static/js/453.2e856aa4.chunk.js.map"
+    "main.css": "http://cnh12.github.io/hana2024/static/css/main.b8316f98.css",
+    "main.js": "http://cnh12.github.io/hana2024/static/js/main.7f3ed31d.js",
+    "static/js/453.2e856aa4.chunk.js": "http://cnh12.github.io/hana2024/static/js/453.2e856aa4.chunk.js",
+    "static/media/star.png": "http://cnh12.github.io/hana2024/static/media/star.dfcb65b96d341caf030b.png",
+    "static/media/logo.svg": "http://cnh12.github.io/hana2024/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "http://cnh12.github.io/hana2024/index.html",
+    "main.b8316f98.css.map": "http://cnh12.github.io/hana2024/static/css/main.b8316f98.css.map",
+    "main.7f3ed31d.js.map": "http://cnh12.github.io/hana2024/static/js/main.7f3ed31d.js.map",
+    "453.2e856aa4.chunk.js.map": "http://cnh12.github.io/hana2024/static/js/453.2e856aa4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1253eb0.css",
-    "static/js/main.7769a562.js"
+    "static/css/main.b8316f98.css",
+    "static/js/main.7f3ed31d.js"
   ]
 }
