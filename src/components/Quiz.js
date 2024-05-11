@@ -11,7 +11,11 @@ function Quiz() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('/data.xlsx');
+      const url = process.env.NODE_ENV === 'production' 
+            ? process.env.PUBLIC_URL + '/data.xlsx' 
+            : 'data.xlsx';
+      console.log("현재 url", url);
+      const response = await fetch(url);
       const arrayBuffer = await response.arrayBuffer();
       const workbook = XLSX.read(arrayBuffer, { type: 'buffer' });
       const worksheet = workbook.Sheets[workbook.SheetNames[0]];
