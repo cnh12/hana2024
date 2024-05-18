@@ -36,6 +36,9 @@ body {
   font-weight: bold;  /* 굵은 글씨체 */
 }
 
+.feedback-message {
+  white-space: pre-wrap; /* Keeps whitespace and newline */
+}
 
 
 .top-bar a,

@@ -19,7 +19,11 @@ function Quiz() {
       const arrayBuffer = await response.arrayBuffer();
       const workbook = XLSX.read(arrayBuffer, { type: 'buffer' });
       const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-      const data = XLSX.utils.sheet_to_json(worksheet);
+      const data = XLSX.utils.sheet_to_json(worksheet).map(row => ({
+        description: row.description,
+        answers: [row.answer1, row.answer2, row.answer3].filter(Boolean), // 여러 개의 정답을 배열로 저장
+        hint: row.hint // 추가 정보(힌트)를 저장
+      }));
       setQuizData(data);
       setCurrentQuizIndex(Math.floor(Math.random() * data.length));
     }
@@ -35,19 +39,22 @@ function Quiz() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const correct = userAnswer.trim().toLowerCase() === quizData[currentQuizIndex].answer.toLowerCase();
+    const correct = quizData[currentQuizIndex].answers.some(answer => 
+      userAnswer.trim().toLowerCase() === answer.toLowerCase()
+    );
+    const correctAnswersText = quizData[currentQuizIndex].answers.join(' or '); // 정답을 쉼표로 구분된 문자열로 변환
     setIsCorrect(correct);
-    setFeedbackMessage(correct ? '정답입니다!' : '틀렸습니다!');
+    setFeedbackMessage(correct ? '정답입니다!' : `틀렸습니다! \n 정답: ${correctAnswersText}`);
     setShowFeedback(true);
-    setTimeout(handleNextQuiz, 2000); // 2초 후 다음 문제로 자동 전환
+    setTimeout(handleNextQuiz, 3000); // 3초 후 다음 문제로 자동 전환
   };
 
   if (quizData.length === 0 || currentQuizIndex === null) return <div>Loading...</div>;
 
   return (
     <div>
-      <h2>{quizData[currentQuizIndex].description}</h2>
-      <a>임시 정답 : {quizData[currentQuizIndex].hint}</a>
+      <h3>{quizData[currentQuizIndex].description}</h3>
+      <a>참고 : {quizData[currentQuizIndex].hint}</a>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
